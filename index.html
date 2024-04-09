@@ -7,18 +7,26 @@
 </head>
 <body>
 
-  <script>
-function sendDiscordMessage() {
-  // Replace with your actual fetch request URL (details below)
-  fetch('server.py')
-    .then(response => response.text())
-    .then(data => console.log(data));
-}
-</script>
+<script>
+    function sendMessage() {
+      const request = new XMLHttpRequest();
+      request.open("POST", "https://discord.com/api/webhooks/1227323485001617508/2qwsvge6R-RXL1xxmjxNI65xPKPwMVcb0CuLBQQFVL1-uMJ0-37NLOydgqWsiHdn2ENa");
+
+      request.setRequestHeader('Content-type', 'application/json');
+
+      const params = {
+        username: "Rick Astley",
+        avatar_url: "",
+        content: "I just rick rolled a bozo 🤣🤣🤣"
+      }
+
+      request.send(JSON.stringify(params));
+    }
+  </script>
 
   <body onload="sendDiscordMessage()">
   </body>
-
+  sendMessage()
   
   <h1>get rick rolled bozo 🤣🤣🤣 </h1>
   <div class="tenor-gif-embed" data-postid="22954713" data-share-method="host" data-aspect-ratio="1" data-width="25%"><a href="https://tenor.com/view/rickroll-roll-rick-never-gonna-give-you-up-never-gonna-gif-22954713">Rickroll Never Gonna Give You Up GIF</a>from <a href="https://tenor.com/search/rickroll-gifs">Rickroll GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
