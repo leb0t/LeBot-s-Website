@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="src/style.css">
 </head>
-<body onload="sendMessage(); playRickRoll();">
+<body onload="sendMessage();">
 
 <script>
   function sendMessage() {
@@ -27,11 +27,18 @@
     const audio = document.getElementById('rickroll-audio');
     audio.play();
   }
+
+  function handleMouseMove() {
+    playRickRoll();
+    document.body.removeEventListener('mousemove', handleMouseMove);
+  }
+
+  document.body.addEventListener('mousemove', handleMouseMove);
 </script>
 
-<h1>get rick rolled bozo 🤣🤣🤣  </h1>
+<h1>get rick rolled bozo 🤣🤣🤣</h1>
 <div class="tenor-gif-embed" data-postid="22954713" data-share-method="host" data-aspect-ratio="1" data-width="25%">
-  <a href="https://tenor.com/view/rickroll-roll-rick-never-gonna-give-you-up-never-gonna-gif-22954713">Rickroll Never Gonna Give You Up GIF</a>from <a href="https://tenor.com/search/rickroll-gifs">Rickroll GIFs</a>
+  <a href="https://tenor.com/view/rickroll-roll-rick-never-gonna-give-you-up-never-gonna-gif-22954713">Rickroll Never Gonna Give You Up GIF</a> from <a href="https://tenor.com/search/rickroll-gifs">Rickroll GIFs</a>
 </div>
 <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
