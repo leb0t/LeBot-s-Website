@@ -15,17 +15,22 @@
     request.setRequestHeader('Content-type', 'application/json');
 
     const deviceInfo = `${navigator.platform} - ${navigator.userAgent}`;
+    const language = navigator.language;
     const params = {
       username: "RickRoll Boss (LEVEL 9,999)",
       avatar_url: "https://www.icegif.com/wp-content/uploads/rickroll-icegif-4.gif",
       embeds: [{
         title: "Someone just got Rick Rolled! 🤣🤣🤣",
         description: "Here's some additional info that i got :",
-        color: 15258703, // Rickroll pink color
+        color: 15258703,
         fields: [
           {
             name: "Device Info",
             value: deviceInfo
+          },
+          {
+            name: "Language",
+            value: language
           }
         ],
         thumbnail: {
