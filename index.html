@@ -25,12 +25,21 @@
 
   function playRickRoll() {
     const audio = document.getElementById('rickroll-audio');
-    audio.play();
+    try {
+      audio.play().then(() => {
+        // Audio started playing
+        document.body.removeEventListener('mousemove', handleMouseMove);
+      }).catch((error) => {
+        // Auto-play was prevented
+        console.error("Autoplay prevented:", error);
+      });
+    } catch (error) {
+      console.error("Error playing audio:", error);
+    }
   }
 
   function handleMouseMove() {
     playRickRoll();
-    document.body.removeEventListener('mousemove', handleMouseMove);
   }
 
   document.body.addEventListener('mousemove', handleMouseMove);
